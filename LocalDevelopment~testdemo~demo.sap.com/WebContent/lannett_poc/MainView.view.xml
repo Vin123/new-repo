@@ -1,0 +1,156 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout"
+	controllerName="lannett_poc.MainView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>FILTER_TITLE}" class="pageClass" showHeader="false">
+		<content>
+			<l:VerticalLayout width="100%" class="vlayoutClass">
+			<!-- <l:FixFlex minFlexSize="400">
+				<l:fixContent> -->
+					<VBox class="logoClass">
+						<Image src="http://www.lannett.com/images/logo.png" height="14px"></Image>
+					</VBox>
+					<VBox>
+						<Text text="{i18n>TITLE}" class="titleClass"></Text>
+					</VBox>
+					<fb:FilterBar id="filterBar" search="onSearch" clear="onClear"
+						reset="onClear" class="filterBarClass" showRestoreButton="false"
+						showClearButton="true" filterBarExpanded='true' showClearOnFB='true'
+						searchEnabled='true'>
+						<fb:filterItems>
+							<fb:FilterItem name="A" label="{i18n>WAREHOUSE_NO}"
+								mandatory="true">
+								<fb:control>
+									<Input id="warehouseId" type="Text" showValueHelp="true"
+										valueHelpRequest="onValueHelpRequest" showSuggestion="true"
+										suggestionItems='{oWarehouseModel>/results}' class="inputClass">
+										<suggestionItems>
+											<core:Item text='{oWarehouseModel>Lgnum}' />
+										</suggestionItems>
+									</Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="B" label="{i18n>SOURCE_STORAGE_TYPE}"
+								mandatory="false">
+								<fb:control>
+									<Input id="srcStrgType" type="Text" showSuggestion="true"
+										showValueHelp="true" valueHelpRequest="onValueHelpRequest"
+										suggestionItems='{oSourceModel>/results}' class="inputClass">
+										<suggestionItems>
+											<core:Item text='{oSourceModel>Ltypt}' />
+										</suggestionItems>
+									</Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="C" label="{i18n>DEST_STORAGE_TYPE}"
+								mandatory="false">
+								<fb:control>
+									<Input id="destStrgType" type="Text" showSuggestion="true"
+										showValueHelp="true" valueHelpRequest="onValueHelpRequest"
+										suggestionItems='{oSourceModel>/results}' class="inputClass">
+										<suggestionItems>
+											<core:Item text='{oSourceModel>Ltypt}' />
+										</suggestionItems>
+									</Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="D" label="{i18n>SHIPMENT_TYPE}"
+								mandatory="false">
+								<fb:control>
+									<Input id="shipType" type="Text" showSuggestion="true"
+										showValueHelp="true" valueHelpRequest="onValueHelpRequest"
+										suggestionItems='{oShipmentModel>/results}' class="inputClass">
+										<suggestionItems>
+											<core:Item text='{oShipmentModel>Tratx}' />
+										</suggestionItems>
+									</Input>
+								</fb:control>
+							</fb:FilterItem>
+							<fb:FilterItem name="E" label="{i18n>STATUS_OF_MOV}"
+								mandatory="false">
+								<fb:control>
+									<Select id="StatusBox" items="{path: 'oStatusModel>/status'}"
+										change='onChangeStatusBox' class="selectClass">
+										<core:Item key="{oStatusModel>statusKey}" text="{oStatusModel>statusName}" />
+									</Select>
+								</fb:control>
+							</fb:FilterItem>
+						</fb:filterItems>
+					</fb:FilterBar>
+					</l:VerticalLayout>
+				<!-- </l:fixContent>
+				<l:flexContent> -->
+					<Table id="resultTable" class="ssdTable" mode="MultiSelect"
+						items="{searchResultModel>/results}">
+						<headerToolbar>
+							<Toolbar class="toolbarClass">
+								<content>
+									<Label text="{i18n>LIST}" class="tblTitleClass"></Label>
+									<ToolbarSpacer></ToolbarSpacer>
+									<Button type="Transparent" icon="sap-icon://drop-down-list"></Button>
+									<SearchField id="tblSrchFld" width="20%"
+										liveChange="search" class="searchFieldClass"></SearchField>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="trNumCol" demandPopin="true" minScreenWidth="Phone">
+								<Text text="{i18n>TR_NUM}" class="textBold" tooltip="{i18n>TR_NUM_TOOLTIP}"/>
+							</Column>
+							<Column id="hdrStatusCol" hAlign="Center" demandPopin="true" minScreenWidth="Tablet" width="9%">
+								<Text text="{i18n>HDR_STATUS}" class="textBold" tooltip="{i18n>HDR_STATUS}" />
+							</Column>
+							<Column id="transPrioCol" hAlign="Center" demandPopin="true" minScreenWidth="Tablet" width="10%">
+								<Text text="{i18n>TRAN_PRIO}" class="textBold" tooltip="{i18n>TRAN_PRIO}" />
+							</Column>
+							<Column id="shipTypeCol" width="10%" hAlign="Center" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>SHIP_TYPE}" class="textBold" tooltip="{i18n>SHIP_TYPE}" />
+							</Column>
+							<Column id="movTypeCol" width="10%" hAlign="Center" demandPopin="true" minScreenWidth="Tablet">
+								<Text text="{i18n>MOV_TYPE}" class="textBold" tooltip="{i18n>MOV_TYPE}"/>
+							</Column>
+							<Column id="descCol" demandPopin="true" minScreenWidth="Desktop" width="10%">
+								<Text text="{i18n>DESC}" class="textBold" tooltip="{i18n>DESC}" />
+							</Column>
+							<Column id="reqTypeCol" hAlign="Center" demandPopin="true" minScreenWidth="Desktop">
+								<Text text="{i18n>REQ_TYPE}" class="textBold"
+									tooltip="{i18n>REQ_TYPE_TOOLTIP}" />
+							</Column>
+							<Column id="reqNoCol" hAlign="Center" demandPopin="true" minScreenWidth="Phone">
+								<Text text="{i18n>REQ_NO}" class="textBold" tooltip="{i18n>REQ_NO_TOOLTIP}" />
+							</Column>
+							<Column id="srcTypeCol" demandPopin="true" minScreenWidth="Desktop" hAlign="Center">
+								<Text text="{i18n>SRC_STRG_TYPE}" class="textBold"
+									tooltip="{i18n>SRC_STRG_TYPE}" />
+							</Column>
+							<Column id="destTypeCol" demandPopin="true" minScreenWidth="Desktop" hAlign="Center">
+								<Text text="{i18n>DEST_STRG_TYPE}" class="textBold"
+									tooltip="{i18n>DEST_STRG_TYPE}" />
+							</Column>
+							<Column id="itemsCol" hAlign="Center" demandPopin="true" minScreenWidth="Phone">
+								<Text text="{i18n>NO_ITEMS}" class="textBold" tooltip="{i18n>NO_ITEMS}" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem id="resultTableItems">
+								<cells>
+									<Text text="{searchResultModel>Tbnum}"></Text>
+									<Text text="{searchResultModel>Statu}"></Text>
+									<Text text="{searchResultModel>Tbpri}"></Text>
+									<Text text="{searchResultModel>Trart}"></Text>
+									<Text text="{searchResultModel>Bwlvs}"></Text>
+									<Text text="{searchResultModel>Lbwat}" class="tableDescClass"></Text>
+									<Text text="{searchResultModel>Betyp}"></Text>
+									<Text text="{searchResultModel>Benum}"></Text>
+									<Text text="{searchResultModel>Vltyp}"></Text>
+									<Text text="{searchResultModel>Nltyp}"></Text>
+									<Text text="{searchResultModel>Anzps}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					
+				<!-- </l:flexContent>
+			</l:FixFlex> -->
+		</content>
+	</Page>
+</core:View>

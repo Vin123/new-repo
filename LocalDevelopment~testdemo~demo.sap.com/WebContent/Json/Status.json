@@ -1,0 +1,16 @@
+{
+	"status": [
+       {
+           "statusName": "Open",
+           "statusKey": ""
+       },
+       {
+           "statusName": "Partially Delivered",
+           "statusKey": "T"
+       },
+       {
+           "statusName": "Completed",
+           "statusKey": "E"
+       }
+   ]
+} 

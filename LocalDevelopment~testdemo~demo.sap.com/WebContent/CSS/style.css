@@ -1,0 +1,146 @@
+.filterBarClass {
+	background-color: transparent !important;
+}
+
+.pageClass {
+	background-color: #fff !important;
+}
+
+.ssdTable .sapMListTbl th {
+	background: #fff url('../Images/fix_bg.png') repeat-x bottom;
+	font-weight: bold !important;
+	padding-bottom: 24px;
+	border-top: 1px solid #dadada !important;
+	border-bottom: 0px solid #dadada !important;
+	/* box-shadow: 0 3px 2px rgba(0,0,0,0.2); */
+	padding-top: 8px;
+}
+
+.ssdTable {
+	width: 100% !important;
+	/* box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24); */
+	/* padding: 0 !important; */
+	background: transparent;
+	/* padding: 32px !important; */
+	margin-top: -4px;
+}
+
+.ssdTable .sapMListTbl {
+	font-family: Open Sans !important;
+}
+
+.ssdTable .sapMText {
+	font-family: Open Sans !important;
+}
+
+/* .sapMLIBShowSeparator>td {
+	padding-bottom: 20px;
+} */
+.textBold {
+	font-weight: bold !important;
+	font-size: 0.8rem !important;
+}
+
+.sapMDialog .sapMDialogSection {
+	background: #fff;
+}
+
+.sapMIBar.sapMSubHeader-CTX {
+	color: #666666;
+	/* background-color: #fff; */
+}
+
+.sapMLabel {
+	font-family: Open Sans !important;
+	font-size: 0.8rem !important;
+}
+
+.sapMBtnInner {
+	font-family: Open Sans !important;
+}
+
+.sapMSltLabel {
+	font-family: Open Sans !important;
+}
+
+.sapMTitle {
+	font-family: Open Sans !important;
+}
+
+.sapUiFormTitle {
+	font-family: Open Sans !important;
+}
+
+.sapMSelectListItemBase {
+	font-family: Open Sans !important;
+}
+
+.searchFieldClass .sapMSFF {
+	border-radius: 5px;
+}
+
+.vlayoutClass {
+	/* background: url('../Images/fix_bg.png') repeat-x bottom; */
+	background: #F7EEF1;
+	padding-bottom: 0.5rem;
+}
+
+.sapMShellBrandingBar {
+	background-color: transparent;
+}
+
+.logoClass {
+	width: 100%;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	opacity: 0.8;
+}
+
+.titleClass {
+	width: 100%;
+	padding-top: 0.5rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	font-family: Open Sans;
+	font-size: 1.5rem;
+	color: #98052d;
+}
+
+.inputClass .sapMInputBaseInner {
+	border-radius: 2px;
+}
+
+.selectClass {
+	border-radius: 2px;
+}
+
+.selectClass .sapMSltArrow {
+	border-radius: 2px;
+}
+
+.tableDescClass {
+	padding-top: 10px !important;
+	padding-bottom: 10px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa !important;
+}
+
+.toolbarClass{
+	background-color: #F7EEF1;
+	padding-left: 2rem !important;
+    padding-right: 1.7rem;
+    border-bottom: 0px !important;
+}
+
+.searchFieldClass .sapMSFF {
+	border-radius: 5px;
+}
+
+.tblTitleClass{
+	font-weight: bold !important;
+    font-size: 1rem !important;
+}

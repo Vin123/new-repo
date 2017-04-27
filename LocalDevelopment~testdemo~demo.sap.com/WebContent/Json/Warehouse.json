@@ -1,0 +1,24 @@
+{
+	"warehouse": [
+       {
+           "warehouseNumber": "100",
+           "warehouseKey": "A"
+       },
+       {
+           "warehouseNumber": "200",
+           "warehouseKey": "B"
+       },
+       {
+           "warehouseNumber": "300",
+           "warehouseKey": "C"
+       },
+       {
+           "warehouseNumber": "400",
+           "warehouseKey": "D"
+       },
+       {
+           "warehouseNumber": "500",
+           "warehouseKey": "E"
+       }
+   ]
+} 

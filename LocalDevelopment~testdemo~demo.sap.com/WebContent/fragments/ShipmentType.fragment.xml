@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<!-- <SelectDialog liveChange="_handleValueHelpSearch" confirm="_handleValueHelpClose" 
+		cancel="_handleValueHelpClose" items="{oWarehouseModel>/warehouse}"> <StandardListItem 
+		title="{oWarehouseModel>warehouseNumber}" /> </SelectDialog> -->
+	<TableSelectDialog contentWidth="20rem"
+		contentHeight='20rem' title="Shipment Type" liveChange="_handleValueHelpSearch2"
+		confirm="_handleValueHelpClose3" close="_handleValueHelpClose3" items="{oShipmentModel>/results}">
+		<ColumnListItem>
+			<cells>
+				<Text text="{oShipmentModel>Lgnum}" />
+				<Text text="{oShipmentModel>Trart}" />
+				<Text text="{oShipmentModel>Tratx}" />
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column>
+				<header>
+					<Text text="{i18n>WAREHOUSE_NO}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>TRART}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Text text="{i18n>TRATX}" />
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
